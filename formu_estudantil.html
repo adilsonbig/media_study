@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="formu_estudantil.css">
+    <title>Formulario estudantil</title>
+</head>
+<body>
+    <h1>FORMULÁRIO ESTUDANTIL</h1>
+    <section class="formulario">
+    <form class="cadastro" method="post" autocomplete="on">
+        <div class="cadas_pessoal">
+        <label for="name">NOME DO ALUNO</label>
+            <input type="text" id="name" name="name" required>
+        <label for="nmmae">NOME DA MÃE</label>
+            <input type="text" id="nmmae" name="nmmae" required>
+        <label for="surname">NOME DO PAI</label>
+             <input type="text" id="nmpai" name="nmpai" required>
+        <label for="dtnasc">DATA DE NASCIMENTO</label>
+             <input type="date" id="dtnasc" name="dtnasc" required>
+        <label for="endereco">ENDEREÇO</label>
+             <input type="text" id="endereco" name="endereco" required>
+        <label for="serie">SÉRIE</label>
+             <input type="text" id="serie" name="serie" required>
+        </div>
+        <div class="calc">
+        <h2>CALCULO DE MÉDIA</h2>
+        <input type="number" name="nota1" id="nota1">
+        <input type="number" name="nota2" id="nota2">
+        <input type="number" name="nota3" id="nota3">
+        <input type="number" name="nota4" id="nota4">
+        <input type="number" name="nota5" id="nota5">
+        <input type="number" name="nota6" id="nota6">
+        <input type="number" name="nota7" id="nota7">
+        <div id="valor_notas">TOTAL MÉDIA</div>
+        <input class="botao" type="button" value="calcular" onclick="calcular()">
+        </div>
+    </form>
+    </section>
+    <script>
+        function calcular() {
+            var not1 = window.document.getElementById('nota1')
+            var not2 = window.document.getElementById('nota2')
+            var not3 = window.document.getElementById('nota3')
+            var not4 = window.document.getElementById('nota4')
+            var not5 = window.document.getElementById('nota5')
+            var not6 = window.document.getElementById('nota6')
+            var not7 = window.document.getElementById('nota7')
+            var valor_notas = window.document.getElementById('valor_notas')
+            var n1 = Number(not1.value)
+            var n2 = Number(not2.value)
+            var n3 = Number(not3.value)
+            var n4 = Number(not4.value)
+            var n5 = Number(not5.value)
+            var n6 = Number(not6.value)
+            var n7 = Number(not7.value)
+            var n8 = (n1+n2+n3+n4+n5+n6+n7)/7
+            valor_notas.innerHTML = n8
+        }
+    </script>
+</body>
+</html>
